@@ -381,9 +381,9 @@ class LinearMovementVibrationsTest:
     def _exit_gcommand(self, state=GcommandExitType("success"), message=None):
         self.toolhead.max_accel = self.max_accel
         for adxl_axis_attached, accel_chip in self.accel_chips:
-            if accel_chip.is_measuring():
-                # no way to reach it without using protected function as of now
-                accel_chip._finish_measurements()
+            # if accel_chip.is_measuring():
+            # no way to reach it without using protected function as of now
+            accel_chip._finish_measurements()
 
         if state.value == "error":
             raise self.gcode.error(message)
