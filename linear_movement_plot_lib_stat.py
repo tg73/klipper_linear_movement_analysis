@@ -206,7 +206,7 @@ def plot_peak_frequencies(
 
 
 def plot_frequency_responses_over_velocity(data, outfile, measurement_parameters, gcmd):
-    data = np.array(data)
+    data = np.array(data, dtype=object)
     plt.ioff()
     fig = plt.figure()
     ax = fig.add_subplot(projection="3d")
